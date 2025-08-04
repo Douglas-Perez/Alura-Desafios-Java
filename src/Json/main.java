@@ -1,21 +1,19 @@
 package Json;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.Strictness;
 
 
 public class main {
+
     public static void main(String[] args) {
-        String json = """
-                {
-                    "nome": "Douglas",
-                    "idade": 24,
-                    "cidade": "São Paulo"
-                }
-                """;
+        String jsonPessoa = "{\"nome\":\"Felipe\",\"cidade\":\"Rio de Janeiro\"}";
 
-        Gson gson = new Gson();
-        Pessoa pessoa = gson.fromJson(json, Pessoa.class);
+        Gson gson = new GsonBuilder().setStrictness(Strictness.LENIENT).create();
+        Pessoa pessoa = gson.fromJson(jsonPessoa, Pessoa.class);
 
-        System.out.println(pessoa);
+        System.out.println("Objeto Pessoa: " + pessoa);
     }
 }
+
