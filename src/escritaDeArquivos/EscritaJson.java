@@ -8,9 +8,20 @@ public class EscritaJson {
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
 
         Titulo titulo = new Titulo("Interstellar", 2014, "Christopher Nolan");
+        Veiculo veiculo = new Veiculo();
+        veiculo.setModelo("Santa Fe");
+        veiculo.setMarca("Hyundai");
+        veiculo.setAno(2016);
 
-        String json = gson.toJson(titulo);
+        String jsonTitulo = gson.toJson(titulo);
+        String jsonVeiculo = gson.toJson(veiculo);
 
-        System.out.println(json);
+        System.out.println("Titulo:");
+        System.out.println(jsonTitulo);
+        System.out.println("--------------------------");
+        System.out.println("Veiculo:");
+        System.out.println(jsonVeiculo);
+
+
     }
 }
